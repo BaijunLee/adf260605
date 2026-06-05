@@ -1,0 +1,13 @@
+{
+	"name": "AzureDatabricksDeltaLake3",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLake",
+		"typeProperties": {
+			"domain": "https://adb-5729185900588721.1.databricks.azure.cn",
+			"clusterId": "0312-054443-jlrvftv0",
+			"workspaceResourceId": "/subscriptions/fdcb27da-91d5-4223-b967-85cfbc459a75/resourceGroups/bjdatabricks/providers/Microsoft.Databricks/workspaces/bjucdbrtest"
+		}
+	}
+}

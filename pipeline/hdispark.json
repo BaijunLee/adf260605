@@ -1,0 +1,39 @@
+{
+	"name": "hdispark",
+	"properties": {
+		"activities": [
+			{
+				"name": "Spark1",
+				"type": "HDInsightSpark",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"rootPath": "script",
+					"entryFilePath": "testtab1.py",
+					"sparkConfig": {
+						"spark.executor.memory": "511m",
+						"spark.driver.memory": "1111m"
+					},
+					"sparkJobLinkedService": {
+						"referenceName": "bjspark0925hdistorage",
+						"type": "LinkedServiceReference"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "linkedService1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-09-26T13:37:25Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

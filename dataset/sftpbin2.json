@@ -1,0 +1,27 @@
+{
+	"name": "sftpbin2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Sftptest",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": "/uploads"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

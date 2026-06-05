@@ -1,0 +1,28 @@
+{
+	"name": "EverySeason3",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Month",
+				"interval": 3,
+				"startTime": "2025-04-02T10:10:00",
+				"timeZone": "China Standard Time",
+				"schedule": {
+					"minutes": [
+						10
+					],
+					"hours": [
+						10
+					],
+					"monthDays": [
+						2
+					]
+				}
+			}
+		}
+	}
+}

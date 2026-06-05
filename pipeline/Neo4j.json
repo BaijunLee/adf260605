@@ -1,0 +1,48 @@
+{
+	"name": "Neo4j",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json",
+						"Accept": "application/json"
+					},
+					"url": "http://40.162.93.77:7474/db/neo4j/tx/commit",
+					"body": {
+						"value": "@json(concat('{\"statements\":[{\"statement\":\"LOAD CSV WITH HEADERS FROM $url AS row CALL { WITH row MERGE (p:Person {id: toInteger(row.id)}) SET p.name=row.name, p.age=toInteger(row.age), p.city=row.city, p.title=row.title } IN TRANSACTIONS OF 500 ROWS\",\"parameters\":{\"url\":\"', pipeline().parameters.PersonsUrl, '\"}}]}'))",
+						"type": "Expression"
+					},
+					"authentication": {
+						"type": "Basic",
+						"username": "neo4j",
+						"password": {
+							"type": "SecureString",
+							"value": "**********"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"PersonsUrl": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-06-02T06:54:58Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

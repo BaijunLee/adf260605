@@ -1,0 +1,25 @@
+{
+	"name": "AzureSqlTableBCPCOPY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Azurebaijuntestsql1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tabcopyname": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().tabcopyname",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
